@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--favicon-->
-	<link rel="icon" href="{{asset('assets/images/figma-icon/Logo.png')}}" type="image/png" />
+	<link rel="icon" href="{{ asset('assets/images/figma-icon/Logo.png') }}" type="image/png"/>
 	<!--plugins-->
 	<link href="{{ asset('assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet"/>
 	<link href="{{ asset('assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
@@ -170,9 +170,9 @@
 			  $(".knob").knob();
 		  });
 	  </script>
-	  <script src="assets/js/index.js"></script>
+	  <script src="{{ asset('assets/js/index.js') }}"></script>
 	<!--app JS-->
-	<script src="assets/js/app.js"></script>
+	<script src="{{ asset('assets/js/app.js') }}"></script>
 </body>
 
 </html>
