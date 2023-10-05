@@ -30,7 +30,7 @@
 	<!--wrapper-->
 	<div class="wrapper">
 		<!--sidebar wrapper -->
-		@include('layout.admin_layout.sidenav')
+		@include('layout.admin_layout.admin-sidenav')
 		<!--end sidebar wrapper -->
 		<!--start header -->
 		@include('layout.admin_layout.admin-header')
