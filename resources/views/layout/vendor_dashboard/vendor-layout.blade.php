@@ -19,10 +19,12 @@
 	<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet">
+	
 	<!-- Theme Style CSS -->
 	<link rel="stylesheet" href="{{ asset('assets/css/dark-theme.css') }}" />
 	<link rel="stylesheet" href="{{ asset('assets/css/semi-dark.css') }}" />
 	<link rel="stylesheet" href="{{ asset('assets/css/header-colors.css') }}" />
+
 	<title>KANBAN - Inventory Management system</title>
 </head>
 
