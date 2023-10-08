@@ -21,7 +21,7 @@ class UserController extends Controller
             $email = $request->input('email');
             $password = $request->input('password');
 
-            DB::beginTransaction();
+          
 
             $count = User::where('email', $email)->count();
 
@@ -40,14 +40,12 @@ class UserController extends Controller
 
                 User::where('email', $email)->update(['otp' => $otp]);
 
-                DB::commit();
-
                 return ResponseHelper::Out('success', 'OTP sent successfully', [], 200);
 
             }
 
         } catch (Exception $e) {
-            DB::rollBack();
+          
             return ResponseHelper::Out('failure', 'Something went wrong', [], 200);
         }
     }
@@ -114,18 +112,22 @@ class UserController extends Controller
             $email = $request->input('email');
             $otp = rand(1000, 9999);
 
-            DB::beginTransaction();
+            $count = User::where('email', $email)->count();
+            if($count===1){
+                Mail::to($email)->send(new OtpMail($otp));
 
-            Mail::to($email)->send(new OtpMail($otp));
+                User::where('email', $email)->update(['otp' => $otp]);
+              
+                return ResponseHelper::Out('success', 'OTP sent successfully', [], 200);
 
-            User::where('email', $email)->update(['otp' => $otp]);
+            }else{
+                return ResponseHelper::Out('failed', 'User Not Found', [], 200);
+            }
 
-            DB::commit();
-
-            return ResponseHelper::Out('success', 'OTP sent successfully', [], 200);
+           
 
         } catch (Exception $e) {
-            DB::rollBack();
+         
             return ResponseHelper::Out('failure', 'Something went wrong', [], 200);
 
         }
