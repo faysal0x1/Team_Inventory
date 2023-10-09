@@ -47,3 +47,11 @@ Route::get('/store',function(){
 Route::get('/vendor',function(){
     return view('pages.vendor.vendor-dashboard');
 });
+
+
+
+require __DIR__ . '/tanvir.php';
+require __DIR__ . '/faysal.php';
+require __DIR__ . '/mazbaul.php';
+require __DIR__ . '/rafiq.php';
+require __DIR__ . '/ruhul.php';

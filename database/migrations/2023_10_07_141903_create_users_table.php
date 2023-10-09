@@ -21,11 +21,11 @@ return new class extends Migration
            $table->string('otp')->default(0);
            $table->string('phone')->nullable();
            $table->string('address')->nullable();
-           $table->string('photo')->nullable();
-
+           $table->string('image')->nullable();
            $table->boolean('is_verified')->default(false);
            $table->enum('role',['admin','supplier','customer','user'])->default('user');
-           $table->enum('status',['active','inactive'])->default('active');
+          
+           $table->boolean('status')->default(0);
 
            $table->rememberToken()->nullable();
 
