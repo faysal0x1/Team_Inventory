@@ -45,8 +45,8 @@ class UserController extends Controller
             }
 
         } catch (Exception $e) {
-          
-            return ResponseHelper::Out('failure', 'Something went wrong', [], 200);
+
+            return ResponseHelper::Out('failure', 'Something went wrong', [$e], 200);
         }
     }
 
@@ -100,7 +100,7 @@ class UserController extends Controller
             }
 
         }catch (Exception $e){
-            return ResponseHelper::Out('failed', 'Something went wrong', [$e], 200);
+            return ResponseHelper::Out('failed', 'Something went wrong', [$e->getMessage()], 200);
 
         }
     }
@@ -185,7 +185,7 @@ class UserController extends Controller
 
     public function logout(){
         return redirect('/')->cookie('token','',-1);
-        }
+    }
     
 
 

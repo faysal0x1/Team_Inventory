@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('mobile_no')->nullable();
             $table->string('email')->nullable();
             $table->string('address')->nullable();
-            $table->tinyInteger('status')->default(1);
+            $table->boolean('status')->default(1);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamp('created_at')->useCurrent();

@@ -44,6 +44,14 @@
                 <div class="menu-title">Suppliers</div>
             </a>
         </li>
+        <li class="" id="customer">
+            <a href="{{url('customer-page')}}">
+                <div class="parent-icon">
+                    <img src="{{asset('assets/images/figma-icon/Suppliers.png')}}">
+                </div>
+                <div class="menu-title">Customer</div>
+            </a>
+        </li>
         <li class="" id="orders">
             <a href="widgets.html">
                 <div class="parent-icon">
