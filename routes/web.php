@@ -38,15 +38,15 @@ Route::get('/admin',function(){
     return view('pages.admin.admin-dashboard');
 });
 
-// store dashboard pages
-Route::get('/store',function(){
-    return view('pages.store.store-dashboard');
-});
+// // store dashboard pages
+// Route::get('/store',function(){
+//     return view('pages.store.store-dashboard');
+// });
 
-// vendor dashboard pages
-Route::get('/vendor',function(){
-    return view('pages.vendor.vendor-dashboard');
-});
+// // vendor dashboard pages
+// Route::get('/vendor',function(){
+//     return view('pages.vendor.vendor-dashboard');
+// });
 
 
 

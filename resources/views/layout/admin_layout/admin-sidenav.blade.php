@@ -37,7 +37,7 @@
             </a>
         </li>
         <li class="" id="suppliers">
-            <a href="widgets.html">
+            <a href="{{ route('supplier.index') }}">
                 <div class="parent-icon">
                     <img src="{{asset('assets/images/figma-icon/Suppliers.png')}}">
                 </div>

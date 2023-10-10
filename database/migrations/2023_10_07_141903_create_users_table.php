@@ -17,14 +17,17 @@ return new class extends Migration
            $table->string('name',50);
            $table->string('user_name',50)->unique()->nullable();
            $table->string('email')->unique();
+           
            $table->string('password');
+        
            $table->string('otp')->default(0);
            $table->string('phone')->nullable();
            $table->string('address')->nullable();
            $table->string('image')->nullable();
+
            $table->boolean('is_verified')->default(false);
            $table->enum('role',['admin','supplier','customer','user'])->default('user');
-          
+
            $table->boolean('status')->default(0);
 
            $table->rememberToken()->nullable();
