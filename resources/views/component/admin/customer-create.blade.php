@@ -14,10 +14,6 @@
                                 <input type="text" class="form-control" id="customerName">
                             </div>
                             <div class="col-12 p-1">
-                                <label class="form-label">Customer Image</label>
-                                <input type="file" class="form-control" id="customerImage">
-                            </div>
-                            <div class="col-12 p-1">
                                 <label class="form-label">Customer Mobile number</label>
                                 <input type="text" class="form-control" id="customerMobileNumber">
                             </div>
@@ -27,12 +23,12 @@
                             </div>
                             <div class="col-12 p-1">
                                 <label class="form-label">Customer Address</label>
-                                <input type="text" class="form-control" id="customerPhone">
+                                <input type="text" class="form-control" id="customerAddress">
                             </div>
                             <div class="col-12 p-1">
                                 <label class="form-check-label" for="flexSwitchCheckDefault">Customer Status</label>
                                 <div class="form-check form-switch">
-									<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+									<input class="form-check-input" type="checkbox" id="customerStatus">
 								</div>
                             </div>
                         </div>
@@ -41,12 +37,46 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button onclick="cricketCustomer()" type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    
+    // async function cricketCustomer(){
+    //     let name = $('#customerName').val();
+    //     let phonenumber = $('#customerMobileNumber').val();
+    //     let email = $('#customerEmail').val();
+    //     let address = $('#customerAddress').val();
+    //     let status = $('#customerStatus').val();
+
+    //     if(name.length===0){
+    //         errorToast("Customer Name is Required!")
+    //     }else if(phonenumber.length===0){
+    //         errorToast("Customer Phone number is Required!")
+    //     }else if(email.length===0){
+    //         errorToast("Customer Email is Required!")
+    //     }else if(address.length===0){
+    //         errorToast("Customer address is Required!")
+    //     }else{
+    //         $('#exampleVerticallycenteredModal').click();
+    //         let url = "{{url('/create-customer')}}";
+    //         let data = {
+    //             name:name,
+    //             phone:phonenumber,
+    //             email:email,
+    //             address:address,
+    //             status:status,
+    //         }
+    //         const res = await axios.post(url,data);
+    //         if(res.status===201){
+    //             successToast('Customer created successful');
+    //             $('#save-form').trigger('reset')
+    //             await getList();
+    //         }else{
+    //             errorToast("Request fail!");
+    //         }
+    //     }
+    // }
 </script>

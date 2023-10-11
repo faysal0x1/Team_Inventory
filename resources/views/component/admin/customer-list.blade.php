@@ -1,49 +1,62 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12 col-sm-12 col-lg-12">
-            <div class="card px-5 py-5">
-                <div class="row justify-content-between ">
-                    <div class="align-items-center col">
-                        <h4>Customer</h4>
-                    </div>
-                    <div class="align-items-center col">
-                        <button type="button" class="float-end btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleVerticallycenteredModal">Create</button>
-                    </div>
-                </div>
-                <hr class="bg-dark "/>
-                <table class="table" id="tableData">
-                    <thead>
-                        <tr class="bg-light">
-                            <th>No</th>
-                            <th>Name</th>
-                            <th>Image</th>
-                            <th>Mobile no</th>
-                            <th>Email</th>
-                            <th>address</th>
-                            <th>status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableList">
-                        
-                    </tbody>
-                </table>
-            </div>
+<!--breadcrumb-->
+<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+    <div class="breadcrumb-title pe-3">Tables</div>
+    <div class="ps-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item">
+                    <a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Data Table</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="ms-auto">
+        <div class="col">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleVerticallycenteredModal">Add Customer</button>
+            {{-- @include('pages.admin.supplier.add_supplier') --}}
+        </div>
+    </div>
+</div>
+<!--end breadcrumb-->
+<hr />
+<h6 class="mb-0 text-uppercase">Supplier List</h6>
+<hr />
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="example2" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>SL</th>
+                        <th>Name</th>
+                        <th>Profile</th>
+                        <th>Mobile no</th>
+                        <th>Email</th>
+                        <th>address</th>
+                        <th>status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableList">
+
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 
 <script>
-    GetCustomer();
+    // GetCustomer();
     async function GetCustomer(){
 
         const res = await axios.get('/list-customer');
         console.log(res);
 
         let tableList = $('#tableList');
-        let tableData = $('#tableData');
+        // let tableData = $('#example2');
 
-        // tableData.DataTable().destroy();
         tableList.empty();
 
         res.data.forEach(function(item,index){
@@ -52,7 +65,7 @@
                     <td>${index+1}</td>
                     <td>${item['name']}</td>
                     <td>
-                        ${item['image']}
+                        <img style="width:35px;height:35px;" src="{{ asset('assets/images/figma-icon/user.webp') }}">      
                     </td>
                     <td>${item['phone']}</td>
                     <td>${item['email']}</td>
@@ -83,10 +96,11 @@
             // $('#delete-modal').modal('show');
             // $('#deleteID').val(id);
         });
-
-        tableData.DataTable({
-            order:[[0,'asc']],
-            lengthMenu:[5,10,15,20]
-        });
+        	
+        let table = new DataTable('#example2');
+        // tableData.DataTable({
+        //     order:[[0,'asc']],
+        //     lengthMenu:[5,10,15,20]
+        // });
     }//end function
 </script>

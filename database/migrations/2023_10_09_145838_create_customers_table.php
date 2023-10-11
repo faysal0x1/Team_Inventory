@@ -14,13 +14,10 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('customer_image')->nullable();
-            $table->string('mobile_no')->nullable();
-            $table->string('email')->nullable();
+            $table->string('mobile')->nullable();
+            $table->string('email')->unique();
             $table->string('address')->nullable();
             $table->boolean('status')->default(1);
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

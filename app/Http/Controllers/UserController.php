@@ -21,8 +21,6 @@ class UserController extends Controller
             $email = $request->input('email');
             $password = $request->input('password');
 
-          
-
             $count = User::where('email', $email)->count();
 
             if ($count === 1) {
