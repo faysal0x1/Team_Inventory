@@ -10,6 +10,8 @@
 
             @include('component.admin.customer-create')
             @include('component.admin.customer-list')
+            @include('component.admin.customer-delete')
+            @include('component.admin.customer-update')
 
         </div>
     </div>

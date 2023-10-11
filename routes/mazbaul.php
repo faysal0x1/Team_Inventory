@@ -7,6 +7,6 @@
     Route::post('/create-customer',[CustomerController::class,'CustomerCreate']);
     Route::get('/list-customer',[CustomerController::class,'CustomerList']);
     Route::post('/customer-by-id',[CustomerController::class,'CustomerById']);
-    Route::post('/update-customer',[CustomerController::class,'CustomerUpdate']);
+    Route::patch('/update-customer',[CustomerController::class,'CustomerUpdate']);
     Route::post('/delete-customer',[CustomerController::class,'CustomerDelete']);
 

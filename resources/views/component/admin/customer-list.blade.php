@@ -48,9 +48,8 @@
 </div>
 
 <script>
-    // GetCustomer();
+    GetCustomer();
     async function GetCustomer(){
-
         const res = await axios.get('/list-customer');
         console.log(res);
 
@@ -67,37 +66,44 @@
                     <td>
                         <img style="width:35px;height:35px;" src="{{ asset('assets/images/figma-icon/user.webp') }}">      
                     </td>
-                    <td>${item['phone']}</td>
+                    <td>${item['mobile']}</td>
                     <td>${item['email']}</td>
                     <td>${item['address']}</td>
                     <td>
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                            <input class="form-check-input customerStatus1" type="checkbox" value="${item['status']}" id="customerStatus">
+                            <label class="form-check-label" for="customerStatus"></label>
                         </div>
                     </td>
                     <td>
-                        <button data-id="${item['id']}" type="button" class="btn btn-small btn-outline-primary px-3">Edit</button>
-                        <button data-id="${item['id']}" type="button" class="btn btn-small btn-outline-primary px-3">Delete</button>
+                        <button data-id="${item['id']}" type="button" class="btn btn-small btn-outline-primary px-3 editBtn">Edit</button>
+                        <button data-id="${item['id']}" type="button" class="btn btn-small btn-outline-primary px-3 deleteBtn">Delete</button>
                     </td>
                 </tr>
             `)
             tableList.append(row)
         });
 
+        var checkbox = $(".customerStatus1");
+
+        if (checkbox.val() == 1) {
+            checkbox.prop('checked', true);
+        }
+        checkbox.empty();
+
         $('.editBtn').on('click',async function(){
             let id=$(this).data('id');
-            // await FillUpUpdateForm(id);
-            // $('#update-modal').modal('show');
+            await FillUpUpdateForm(id);
+            $('#update-modal').modal('show');
         });
         
         $('.deleteBtn').on('click',function(){
             let id=$(this).data('id');
-            // $('#delete-modal').modal('show');
-            // $('#deleteID').val(id);
+            $('#delete-modal').modal('show');
+            $('#deleteID').val(id);
         });
         	
-        let table = new DataTable('#example2');
+        // let table = new DataTable('#example2');
         // tableData.DataTable({
         //     order:[[0,'asc']],
         //     lengthMenu:[5,10,15,20]

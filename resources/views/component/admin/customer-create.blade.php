@@ -26,57 +26,66 @@
                                 <input type="text" class="form-control" id="customerAddress">
                             </div>
                             <div class="col-12 p-1">
-                                <label class="form-check-label" for="flexSwitchCheckDefault">Customer Status</label>
-                                <div class="form-check form-switch">
+                                <label class="form-check-label" for="customerStatus">Customer Status</label>
+                                <input type="number" class="form-control" id="customerStatus">
+                                {{-- <div class="form-check form-switch">
 									<input class="form-check-input" type="checkbox" id="customerStatus">
-								</div>
+								</div> --}}
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button onclick="cricketCustomer()" type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" id="modal-close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button onclick="createCustomer()" type="button" class="btn btn-primary">Save</button>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    // async function cricketCustomer(){
-    //     let name = $('#customerName').val();
-    //     let phonenumber = $('#customerMobileNumber').val();
-    //     let email = $('#customerEmail').val();
-    //     let address = $('#customerAddress').val();
-    //     let status = $('#customerStatus').val();
+    async function createCustomer(){
+        // $(document).ready(function() {
+        //     var checkbox = $("#customerStatus");
 
-    //     if(name.length===0){
-    //         errorToast("Customer Name is Required!")
-    //     }else if(phonenumber.length===0){
-    //         errorToast("Customer Phone number is Required!")
-    //     }else if(email.length===0){
-    //         errorToast("Customer Email is Required!")
-    //     }else if(address.length===0){
-    //         errorToast("Customer address is Required!")
-    //     }else{
-    //         $('#exampleVerticallycenteredModal').click();
-    //         let url = "{{url('/create-customer')}}";
-    //         let data = {
-    //             name:name,
-    //             phone:phonenumber,
-    //             email:email,
-    //             address:address,
-    //             status:status,
-    //         }
-    //         const res = await axios.post(url,data);
-    //         if(res.status===201){
-    //             successToast('Customer created successful');
-    //             $('#save-form').trigger('reset')
-    //             await getList();
-    //         }else{
-    //             errorToast("Request fail!");
-    //         }
-    //     }
-    // }
+        //     checkbox.change(function() {
+        //         if (checkbox.is(":checked")) {
+        //             $("#customerStatus").val(1);
+        //         } else {
+        //             $("#customerStatus").val(0);
+        //         }
+        //     });
+        // });
+
+        let name    = $('#customerName').val();
+        let mobile  = $('#customerMobileNumber').val();
+        let email   = $('#customerEmail').val();
+        let address = $('#customerAddress').val();
+        let status  = $('#customerStatus').val();
+
+        if(name.length===0){
+            window.alert("Customer Name is Required!")
+        }else if(email.length===0){
+            window.alert("Customer Email is Required!")
+        }else{
+            $('#modal-close').click();
+            let url = "{{url('/create-customer')}}";
+            let data = {
+                name:name,
+                mobile:mobile,
+                email:email,
+                address:address,
+                status:status
+            }
+            const res = await axios.post('/create-customer',data);
+            if(res.status===201){
+                window.alert('Customer created successful');
+                $('#save-form').trigger('reset');
+                await GetCustomer();
+            }else{
+                window.alert("Request fail!");
+            }
+        }
+    }
 </script>
