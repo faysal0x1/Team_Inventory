@@ -51,7 +51,7 @@ class CategoryController extends Controller
         try {
             $category_id = $request->input('id');
             $name = $request->input('name');
-            $status = $request->input('status');
+         
 
             $count = Category::where('name', $name)->count();
 
@@ -61,8 +61,7 @@ class CategoryController extends Controller
 
             } else {
                 Category::where('id', $category_id)->update([
-                    'name' => $name,
-                    'status' => $status,
+                    'name' => $name
                 ]);
                 return ResponseHelper::Out('success', 'Category updated', [], 200);
             }
@@ -93,6 +92,32 @@ class CategoryController extends Controller
          return ResponseHelper::Out('failed', 'Something went wrong', [$e], 200);
       }
 
+     }
+
+     public function updateStatus(Request $request){
+        try{
+            $category_id = $request->input('id');
+            $new_status = $request->input('newStatus');
+    
+            Category::where('id',$category_id)->update([
+               'status' =>$new_status
+             ]);
+
+             return ResponseHelper::Out('success', '', [], 200);  
+        }catch (Exception $e){
+            return ResponseHelper::Out('failed', 'Something went wrong', [$e], 200);
+        }
+       
+
+     }
+    public function categoryById(Request $request){
+        $category_id = $request->input('id');
+        return Category::where('id',$category_id)->first();
+     }
+    
+    public function categoryPage()
+     {
+        return view('pages.admin.admin-category');
      }
 
 }

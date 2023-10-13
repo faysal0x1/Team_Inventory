@@ -11,4 +11,8 @@ use Illuminate\Support\Facades\Route;
    Route::post('/create-category','createCategory');
    Route::post('/update-category','updateCategory');
    Route::post('/delete-category','deleteCategory');
+   Route::post('/category-by-id','categoryById');
+   Route::post('/update-status','updateStatus');
+    //page route
+    Route::get('/category-page','categoryPage');
 });
