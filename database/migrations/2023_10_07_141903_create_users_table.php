@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
            $table->id();
-
            $table->string('name',50);
            $table->string('user_name',50)->unique()->nullable();
            $table->string('email')->unique();
@@ -27,7 +26,7 @@ return new class extends Migration
 
            $table->boolean('is_verified')->default(false);
            $table->enum('role',['admin','supplier','customer','user'])->default('user');
-
+           
            $table->boolean('status')->default(0);
 
            $table->rememberToken()->nullable();

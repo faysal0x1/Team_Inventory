@@ -46,6 +46,7 @@
 
 	<script src="{{asset('assets/js/axios.min.js')}}"></script>
 	<title>Inventory Management system</title>
+	<script src="{{asset('assets/js/axios.min.js')}}"></script>
 </head>
 
 <body>

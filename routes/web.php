@@ -26,9 +26,7 @@ Route::controller(UserController::class)->group(function (){
     Route::post('/login','login');
     Route::post('/otp_verify_for_pw_reset','verifyOtp');
     Route::post('/reset_password','resetPassword')->middleware(TokenVerifyMiddleware::class);
-    Route::get('/logout','logout'); 
-   
-
+    Route::get('/logout','logout');
 
 });
 
