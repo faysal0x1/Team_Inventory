@@ -15,6 +15,11 @@
 
 	<link href="{{ asset('assets/plugins/datatable/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" />
 
+	<!-- data table -->
+	
+	<link href="{{asset('assets/css/jquery.dataTables.min.css')}}" rel="stylesheet" />
+   
+	
 	<!-- loader-->
 	<link href="{{ asset('assets/css/pace.min.css') }}" rel="stylesheet" />
 	<script src="{{ asset('assets/js/pace.min.js') }}"></script>
@@ -26,19 +31,6 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/dark-theme.css') }}" />
 	<link rel="stylesheet" href="{{ asset('assets/css/semi-dark.css') }}" />
 	<link rel="stylesheet" href="{{ asset('assets/css/header-colors.css') }}" />
-
-	<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-
-
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
-
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-
-
 	<title>Inventory Management system</title>
 </head>
 

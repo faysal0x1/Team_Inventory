@@ -14,12 +14,9 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
 
-            
-            $table->string('name')->nullable();
+            $table->string('name')->unique();
             $table->boolean('status')->default(1);
-
-
-
+           
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
