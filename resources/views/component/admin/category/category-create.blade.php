@@ -47,7 +47,7 @@
      
            $('#save-form').trigger('reset');
 
-            alert(res.data['msg']);
+           toastr.success(res.data.msg, 'Success');
            await getCategory();
 
            }else{

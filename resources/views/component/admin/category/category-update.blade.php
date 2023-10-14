@@ -21,7 +21,7 @@
             <div class="modal-footer">
                 <button id="update-modal-close" type="button" class="btn btn-secondary"
                     data-bs-dismiss="modal">Close</button>
-                <button onclick="Update()" id="update-btn"class="btn btn-primary">Update</button>
+                <button onclick="Update()" id="update-btn" class="btn btn-primary">Update</button>
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
         let category_id = $('#updateID').val();
 
         if (updated_catagory_name.length === 0) {
-            alert("Category Name Required");
+            toastr.error("Name Required");
          }
          else {
             let res = await axios.post('/update-category', {
@@ -56,12 +56,12 @@
 
             if (res.data['status'] === 'success') {
                 $('#update-modal-close').click();
-                alert(res.data['msg'])
+            toastr.success(res.data.msg, 'Success');
                 await getCategory();
 
             }
              else {
-                alert(res.data['msg']);
+                toastr.error(res.data.msg);
             }
         }
        

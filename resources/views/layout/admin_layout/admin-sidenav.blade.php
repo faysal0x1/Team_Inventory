@@ -28,6 +28,33 @@
                 <div class="menu-title">Inventory</div>
             </a>
         </li>
+
+
+
+        <li class="" id="category">
+            <a href="{{url('/category-page')}}">
+                <div class="parent-icon">
+                    <img src="{{asset('assets/images/figma-icon/Manage Store.png')}}">
+                </div>
+                <div class="menu-title">Category</div>
+            </a>
+        </li>
+
+        <li><h6 class="text-center">Tanvir</h6></li>
+
+        @include('layout.admin_layout.personalNav.tanvir') 
+
+        <li><h6 class="text-center">Mazbaul</h6></li>
+
+        @include('layout.admin_layout.personalNav.mazbaul') 
+
+        <li><h6 class="text-center">Faysal</h6></li>
+
+        @include('layout.admin_layout.personalNav.faysal') 
+
+
+
+
         <li class="" id="reports">
             <a href="widgets.html">
                 <div class="parent-icon">
@@ -44,6 +71,7 @@
                 <div class="menu-title">Suppliers</div>
             </a>
         </li>
+
         <li class="" id="orders">
             <a href="widgets.html">
                 <div class="parent-icon">
@@ -60,7 +88,7 @@
                 <div class="menu-title">Manage Store</div>
             </a>
         </li>
-       
+
     </ul>
     <!--end navigation-->
 </div>

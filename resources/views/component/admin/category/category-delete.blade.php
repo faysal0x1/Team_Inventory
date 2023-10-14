@@ -24,14 +24,12 @@
  
        let res = await axios.post('/delete-category',{id:id});
    
-
       if( res.data['status'] === 'success'){
-     
-         alert(res.data['msg']);
+        toastr.success(res.data.msg, 'Success');
          await getCategory();
        
       }else{
-        alert(res.data['msg']);
+        toastr.error(res.data.msg);
       } 
 
    }
