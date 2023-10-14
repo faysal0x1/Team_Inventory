@@ -33,6 +33,11 @@ class User extends Model
     {
         return $this->hasMany(Invoice::class);
     }
+
+    public function stores()
+    {
+        return $this->hasMany(Store::class);
+    }
     
 
       /**

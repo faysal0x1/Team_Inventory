@@ -18,10 +18,15 @@ return new class extends Migration
             $table->double('due_amount')->nullable();
             $table->double('total_amount')->nullable();
             $table->double('discount_amount')->nullable();
+
             $table->unsignedBigInteger('invoice_id')->nullable();
             $table->unsignedBigInteger('customer_id')->nullable();
+
+
             $table->foreign('invoice_id')->references('id')->on('invoices');
             $table->foreign('customer_id')->references('id')->on('customers');
+
+            
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
