@@ -28,7 +28,7 @@
 <div class="card">
     <div class="card-body">
         <div class="table-responsive">
-            <table id="tableData" class="table table-striped table-bordered">
+            <table id="example2" class="table table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>SL</th>
@@ -38,9 +38,6 @@
                     </tr>
                 </thead>
                 <tbody id="tableList">
-
-
-
                 </tbody>
             </table>
         </div>
