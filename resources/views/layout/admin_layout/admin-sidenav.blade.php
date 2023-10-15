@@ -88,6 +88,7 @@
                 <div class="menu-title">Manage Store</div>
             </a>
         </li>
+      
 
     </ul>
     <!--end navigation-->
