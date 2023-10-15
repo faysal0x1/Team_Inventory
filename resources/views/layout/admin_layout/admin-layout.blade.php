@@ -15,6 +15,11 @@
 
 	<link href="{{ asset('assets/plugins/datatable/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" />
 
+	<!-- data table -->
+	
+	<link href="{{asset('assets/css/jquery.dataTables.min.css')}}" rel="stylesheet" />
+   
+	
 	<!-- loader-->
 	<link href="{{ asset('assets/css/pace.min.css') }}" rel="stylesheet" />
 	<script src="{{ asset('assets/js/pace.min.js') }}"></script>
@@ -37,8 +42,9 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+    <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script> 
 
-
+	<script src="{{asset('assets/js/axios.min.js')}}"></script>
 	<title>Inventory Management system</title>
 </head>
 
