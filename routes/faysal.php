@@ -8,5 +8,6 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/supplier', SupplierController::class)
 ;
 
-Route::get('/supplierlist', [SupplierController::class, 'supplierlist'])->name('supplierlist');
+Route::get('/supplierlist', [SupplierController::class, 'supplierlist'])
+    ->name('supplier.list');
 

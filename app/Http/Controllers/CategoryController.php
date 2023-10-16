@@ -36,13 +36,12 @@ class CategoryController extends Controller
                 Category::create([
                     'name' => $name,
                 ]);
-
                 return ResponseHelper::Out('success', 'added to category', [], 200);
 
             }
 
         } catch (Exception $e) {
-            return ResponseHelper::Out('failed', 'Something went wrong', [$e], 200);
+            return ResponseHelper::Out('failed', 'Something went wrong', [$e], 500);
         }
     }
 

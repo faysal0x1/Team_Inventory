@@ -104,9 +104,6 @@
             label.text(this.checked ? 'Active' : 'Deactive');
         });
 
-
-
-
         // new DataTable(tableData,{
         //     order:[[0,'asc']],
         //    lengthMenu:[10,20,30,40]
@@ -117,7 +114,6 @@
     async function updateCategoryStatus(id, newStatus) {
 
         try {
-
             let res = await axios.post('/update-status', {
                 id,
                 newStatus

@@ -1,5 +1,6 @@
 <?php
     use App\Http\Controllers\CustomerController;
+    // use Illuminate\Routing\Route;
 
     //page route
     Route::get('/customer-page',[CustomerController::class,'CustomerPage']);

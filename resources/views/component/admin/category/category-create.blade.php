@@ -42,16 +42,14 @@
            let res =  await axios.post('/create-category',{
             name:categoty_name
            })
-
            if(res.data['status']=== 'success'){
      
            $('#save-form').trigger('reset');
-
            toastr.success(res.data.msg, 'Success');
            await getCategory();
 
            }else{
-            alert(res.data['msg']);
+           toastr.error("something went wrong");
            }
         }
         

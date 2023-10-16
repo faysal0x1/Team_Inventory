@@ -65,12 +65,14 @@
         let status  = $('#customerStatus').val();
 
         if(name.length===0){
-            window.alert("Customer Name is Required!")
+            alert("Customer Name is Required!")
         }else if(email.length===0){
-            window.alert("Customer Email is Required!")
+            alert("Customer Email is Required!")
         }else{
             $('#modal-close').click();
             let url = "{{url('/create-customer')}}";
+
+
             let data = {
                 name:name,
                 mobile:mobile,
@@ -78,6 +80,7 @@
                 address:address,
                 status:status
             }
+
             const res = await axios.post('/create-customer',data);
             if(res.status===201){
                 window.alert('Customer created successful');

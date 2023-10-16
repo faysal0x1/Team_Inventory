@@ -77,7 +77,7 @@
             password: password,
             phone: phone,
         };
-        const res = await axios.post('/supplier', data, {
+        const res = await axios.post('/supplierss', data, {
             headers: {
                 'X-CSRF-TOKEN': '{{ csrf_token() }}',
             },
@@ -88,10 +88,10 @@
             toastr.success(res.data.message, 'Success');
             await getList();
         }else{
-            toastr.error("Something Went Wrong");
+            toastr.error(res.data.message);
         }
     } catch (error) {
-        
+        toastr.error("Something Went Wrong SErver");
     }
 }
 

@@ -14,6 +14,7 @@ class CustomerController extends Controller
     public function CustomerList(Request $request){
         return Customer::all();
     }//end method
+    
     public function CustomerCreate(Request $request){
         $name    = $request->input('name');
         $email   = $request->input('email');
