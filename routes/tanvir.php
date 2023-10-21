@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +29,16 @@ Route::controller(UnitController::class)->group(function (){
    Route::post('/update-unit-status','updateUnitStatus')->name('updateUnitStatus');
    //page route
    Route::get('/unit-page','unitPage')->name('unit.page');
+});
+
+Route::controller(ProductController::class)->group(function (){
+    Route::get('/get-product','getProduct')->name('getProduct');
+    Route::get('/get-active-product','getActiveProduct')->name('ActiveProduct');
+    Route::post('/create-product','createProduct')->name('createProduct');
+    Route::post('/update-product','updateProduct')->name('updateProduct');
+    Route::post('/delete-product','deleteProduct')->name('deleteProduct');
+    Route::post('/product-by-id','productById')->name('productById');
+    Route::post('/update-product-status','updateProductStatus')->name('updateProductStatus');
+   //page route
+   Route::get('/product-page','productPage')->name('product.page');
 });
